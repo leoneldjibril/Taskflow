@@ -1,0 +1,106 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.tile {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.tileValue {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.tileLabel {
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 16px;
+}
+
+.chartCard {
+    position: relative;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.chartTitle {
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.axisLine {
+    stroke: var(--border-grid);
+    stroke-width: 1;
+}
+
+.baseline {
+    stroke: var(--border-strong);
+    stroke-width: 1;
+}
+
+.axisLabel {
+    fill: var(--text-muted);
+    font-size: 11px;
+}
+
+.valueLabel {
+    fill: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.emptyChart {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    background-color: var(--tooltip-bg);
+    border: 1px solid var(--border-strong);
+    color: white;
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.emptyState{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    color: var(--text-primary);
+}

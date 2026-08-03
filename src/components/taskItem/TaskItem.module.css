@@ -1,0 +1,160 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-left-width: 4px;
+    padding: 20px 24px;
+    cursor: pointer;
+}
+.item{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.default{
+    background-color: var(--bg-surface);
+    border-color: var(--border);
+}
+.default:hover{
+    background-color: rgba(59, 121, 246, 0.03);
+    border-color: rgba(59, 121, 246, 0.15);
+}
+.Success{
+    background-color: rgba(84, 255, 14, 0.04);
+    border-color: rgba(84, 255, 14, 0.15);
+}
+.Success:hover{
+    background-color: rgba(84, 255, 14, 0.07);
+    border-color:rgba(84, 255, 14, 0.2) ;
+}
+
+.accent-haute{ border-left-color: #e74c3c; }
+.accent-moyenne{ border-left-color: #f39c12; }
+.accent-basse{ border-left-color: #2ecc71; }
+
+.checkbox{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 30px;
+     height: 30px;
+     padding: 0;
+     border: none;
+     border-radius: 9999px;
+     font-weight: 900;
+     font-size: 0.8em;
+     font-family: inherit;
+     flex-shrink: 0;
+     box-sizing: border-box;
+}
+.checkboxDefault{
+    background-color: rgba(59, 121, 246, 0.15);
+    color: var(--accent);
+}
+.checkboxSuccess{
+    background-color: rgba(84, 255, 14, 0.15);
+    color: rgba(84, 255, 14, 0.8);
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+.titleDefault{
+    color: var(--text-primary);
+}
+.titleSuccess{
+    text-decoration: line-through;
+    color: rgba(84, 255, 14, 0.5);
+}
+
+.inputEdit{
+    padding: 4px 8px;
+    font-size: 1rem;
+    border: 1px solid rgba(59, 121, 246, 0.55);
+    border-radius: 4px;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+}
+
+.meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.metaField{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    background-color: var(--tint-neutral);
+    color: var(--text-gray);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.dateInput{
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+    cursor: pointer;
+}
+
+.prioritySelect{
+    font-weight: bold;
+}
+
+.prioritySelectInput{
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    font-weight: bold;
+    padding: 0;
+    cursor: pointer;
+}
+.prioritySelectInput option{
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    font-weight: normal;
+}
+
+.priorityHigh{
+    color: var(--priority-high-text);
+    background-color: rgba(231, 76, 60, 0.15);
+}
+.priorityMedium{
+    color: var(--priority-medium-text);
+    background-color: rgba(243, 156, 18, 0.15);
+}
+.priorityLow{
+    color: var(--priority-low-text);
+    background-color: rgba(46, 204, 113, 0.15);
+}
+
+.statusDoing{
+    color: var(--accent);
+    background-color: rgba(59, 121, 246, 0.15);
+    font-weight: bold;
+}
+
+.actions{
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.iconButton{
+    padding: 8px;
+}

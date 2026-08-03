@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+.titleContainer{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    background-color: rgba(59, 121, 246, 0.15);
+    color: var(--accent);
+}
+.actions{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.themeToggle{
+    padding: 8px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+.themeToggle:hover{
+    color: var(--accent);
+}
+.version{
+    padding: 4px 10px;
+    border-radius: 9999px;
+    background-color: rgba(59, 121, 246, 0.1);
+    font-size: 0.85em;
+}

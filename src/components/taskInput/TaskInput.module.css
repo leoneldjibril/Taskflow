@@ -1,0 +1,89 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 1em rgba(59, 121, 246, 0.15));
+}
+
+input{
+    background-color: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    height: 40px;
+    width: 100%;
+    padding: 0 20px;
+    color: var(--text-gray);
+}
+
+input:focus{
+outline: none;
+color: var(--text-primary);
+border-color: rgba(59, 121, 246, 0.55);
+}
+
+.optionsRow{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.field{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    height: 40px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.field:focus-within{
+    border-color: rgba(59, 121, 246, 0.55);
+}
+
+.fieldIcon{
+    color: var(--text-gray);
+    flex-shrink: 0;
+}
+
+.dateInput{
+    background: transparent;
+    border: none;
+    padding: 0;
+    height: auto;
+    width: auto;
+    color: var(--text-secondary);
+}
+
+.dateInput:focus{
+    border: none;
+    color: var(--text-primary);
+}
+
+.select{
+    background: transparent;
+    border: none;
+    padding: 0;
+    height: auto;
+    width: auto;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.select:focus{
+    border: none;
+    color: var(--text-primary);
+}
+
+.select option{
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+}
+
+.submit{
+    margin-left: auto;
+}

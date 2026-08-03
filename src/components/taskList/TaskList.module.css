@@ -1,0 +1,56 @@
+.title{
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.emptyState{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.titleWithIcon{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(84, 255, 14, 0.7);
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.filterButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.filterButton:hover {
+    border-color: rgba(59, 121, 246, 0.4);
+}
+
+.filterButtonActive {
+    background-color: rgba(59, 121, 246, 0.15);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: bold;
+}
