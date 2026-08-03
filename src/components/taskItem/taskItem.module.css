@@ -102,6 +102,31 @@
     cursor: pointer;
 }
 
+.addDateButton{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    border: 1px dashed var(--border);
+    background: transparent;
+    color: var(--icon-muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+    opacity: 0;
+    transition: opacity 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.container:hover .addDateButton,
+.container:focus-within .addDateButton{
+    opacity: 1;
+}
+
+.addDateButton:hover{
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 .dateInput{
     background: transparent;
     border: none;

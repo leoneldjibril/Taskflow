@@ -13,8 +13,10 @@ export const TaskItem = ({ task, editTask, deleteTask, number }) => {
   const [newTitle, setNewTitle] = useState(task.title);
   const [newDate, setNewDate] = useState(task.scheduledAt || "");
   const [newPriority, setNewPriority] = useState(task.priority || "moyenne");
+  const [isAddingDate, setIsAddingDate] = useState(false);
   const cancelledRef = useRef(false);
   const isDone = task.status === "done";
+  const showDateInput = Boolean(task.scheduledAt) || isAddingDate;
 
   const handleTitleUpdate = () => {
     if (cancelledRef.current) {
@@ -117,15 +119,31 @@ export const TaskItem = ({ task, editTask, deleteTask, number }) => {
               </span>
             )}
 
-            <label className={styles.metaField} onClick={(e) => e.stopPropagation()}>
-              <IconCalendar width={14} height={14} />
-              <input
-                type="datetime-local"
-                value={newDate}
-                onChange={handleDateChange}
-                className={styles.dateInput}
-              />
-            </label>
+            {showDateInput ? (
+              <label className={styles.metaField} onClick={(e) => e.stopPropagation()}>
+                <IconCalendar width={14} height={14} />
+                <input
+                  type="datetime-local"
+                  value={newDate}
+                  autoFocus={isAddingDate && !task.scheduledAt}
+                  onChange={handleDateChange}
+                  onBlur={() => setIsAddingDate(false)}
+                  className={styles.dateInput}
+                />
+              </label>
+            ) : (
+              <button
+                type="button"
+                className={styles.addDateButton}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsAddingDate(true);
+                }}
+              >
+                <IconCalendar width={14} height={14} />
+                Ajouter une date
+              </button>
+            )}
 
             <label
               className={`${styles.metaField} ${styles.prioritySelect} ${getPriorityColor(newPriority)}`}

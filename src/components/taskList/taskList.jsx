@@ -59,58 +59,62 @@ export const TaskList = ({
     );
   });
 
-  return (
-    <div className="box">
-      {/* Message principal */}
-      {tasksList.length > 0 && (
-        <h2 className={style.title}>
-          {incompletedTask > 0 ? (
-            <>
-              Il vous reste encore{" "}
-              <span className="important">{incompletedTask}</span> tâche
-              {incompletedTask > 1 ? "s" : ""} à accomplir !
-            </>
-          ) : (
-            <span className={style.titleWithIcon}>
-              <IconParty width={20} height={20} />
-              Bravo, vous avez accompli toutes vos tâches !
-            </span>
-          )}
-        </h2>
-      )}
-
-      {/* Filtres de vue */}
-      {tasksList.length > 0 && (
-        <div className={style.filters} role="group" aria-label="Filtrer les tâches">
-          {FILTERS.map((filterOption) => {
-            const Icon = filterOption.icon;
-            return (
-              <button
-                key={filterOption.key}
-                type="button"
-                className={`${style.filterButton} ${filter === filterOption.key ? style.filterButtonActive : ""}`}
-                aria-pressed={filter === filterOption.key}
-                onClick={() => setFilter(filterOption.key)}
-              >
-                <Icon width={14} height={14} />
-                {filterOption.label}
-              </button>
-            );
-          })}
-        </div>
-      )}
-
-      {/* Affichage des tâches ou message d'accueil */}
-      {taskList.length > 0 ? (
-        <ul className={style.container}>{taskList}</ul>
-      ) : tasksList.length > 0 ? (
-        <h2 className={style.emptyState}>Aucune tâche dans ce filtre.</h2>
-      ) : (
+  if (tasksList.length === 0) {
+    return (
+      <div className="box">
         <h2 className={style.emptyState}>
           <IconListChecks width={22} height={22} />
           Bienvenue sur Le Gestionnaire des Tâches, quels sont vos objectifs
           d'aujourd'hui ?
         </h2>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      {/* Message principal */}
+      <h2 className={style.title}>
+        {incompletedTask > 0 ? (
+          <>
+            Il vous reste encore{" "}
+            <span className="important">{incompletedTask}</span> tâche
+            {incompletedTask > 1 ? "s" : ""} à accomplir !
+          </>
+        ) : (
+          <span className={style.titleWithIcon}>
+            <IconParty width={20} height={20} />
+            Bravo, vous avez accompli toutes vos tâches !
+          </span>
+        )}
+      </h2>
+
+      {/* Filtres de vue */}
+      <div className={style.filters} role="group" aria-label="Filtrer les tâches">
+        {FILTERS.map((filterOption) => {
+          const Icon = filterOption.icon;
+          return (
+            <button
+              key={filterOption.key}
+              type="button"
+              className={`${style.filterButton} ${filter === filterOption.key ? style.filterButtonActive : ""}`}
+              aria-pressed={filter === filterOption.key}
+              onClick={() => setFilter(filterOption.key)}
+            >
+              <Icon width={14} height={14} />
+              {filterOption.label}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Affichage des tâches ou message si le filtre ne retient rien */}
+      {taskList.length > 0 ? (
+        <ul className={style.container}>{taskList}</ul>
+      ) : (
+        <div className="box">
+          <h2 className={style.emptyState}>Aucune tâche dans ce filtre.</h2>
+        </div>
       )}
     </div>
   );
