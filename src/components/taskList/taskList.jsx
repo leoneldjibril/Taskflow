@@ -110,7 +110,9 @@ export const TaskList = ({
 
       {/* Affichage des tâches ou message si le filtre ne retient rien */}
       {taskList.length > 0 ? (
-        <ul className={style.container}>{taskList}</ul>
+        <div className={style.listCard}>
+          <ul className={style.container}>{taskList}</ul>
+        </div>
       ) : (
         <div className="box">
           <h2 className={style.emptyState}>Aucune tâche dans ce filtre.</h2>

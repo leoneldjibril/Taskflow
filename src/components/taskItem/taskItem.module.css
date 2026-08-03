@@ -3,11 +3,14 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    border-radius: 8px;
-    border: 1px solid;
-    border-left-width: 4px;
-    padding: 20px 24px;
+    border-left: 3px solid transparent;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 12px;
     cursor: pointer;
+    transition: background-color 0.12s;
+}
+.container:last-child{
+    border-bottom: none;
 }
 .item{
     display: flex;
@@ -16,21 +19,14 @@
     min-width: 0;
 }
 
-.default{
-    background-color: var(--bg-surface);
-    border-color: var(--border);
-}
 .default:hover{
-    background-color: rgba(59, 121, 246, 0.03);
-    border-color: rgba(59, 121, 246, 0.15);
+    background-color: var(--tint-neutral);
 }
 .Success{
-    background-color: rgba(84, 255, 14, 0.04);
-    border-color: rgba(84, 255, 14, 0.15);
+    background-color: rgba(84, 255, 14, 0.03);
 }
 .Success:hover{
-    background-color: rgba(84, 255, 14, 0.07);
-    border-color:rgba(84, 255, 14, 0.2) ;
+    background-color: rgba(84, 255, 14, 0.06);
 }
 
 .accent-haute{ border-left-color: #e74c3c; }
@@ -41,8 +37,8 @@
      display: flex;
      align-items: center;
      justify-content: center;
-     width: 30px;
-     height: 30px;
+     width: 28px;
+     height: 28px;
      padding: 0;
      border: none;
      border-radius: 9999px;
@@ -64,7 +60,7 @@
 .content{
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
     min-width: 0;
 }
 .titleDefault{
@@ -87,16 +83,14 @@
 .meta{
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    align-items: center;
+    gap: 14px;
 }
 
 .metaField{
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 2px 8px;
-    border-radius: 9999px;
-    background-color: var(--tint-neutral);
+    gap: 5px;
     color: var(--text-gray);
     font-size: 0.8rem;
     cursor: pointer;
@@ -105,16 +99,14 @@
 .addDateButton{
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 2px 8px;
-    border-radius: 9999px;
-    border: 1px dashed var(--border);
+    gap: 5px;
     background: transparent;
+    border: none;
     color: var(--icon-muted);
     font-size: 0.8rem;
     font-weight: 400;
     opacity: 0;
-    transition: opacity 0.15s, border-color 0.15s, color 0.15s;
+    transition: opacity 0.15s, color 0.15s;
 }
 
 .container:hover .addDateButton,
@@ -123,7 +115,6 @@
 }
 
 .addDateButton:hover{
-    border-color: var(--accent);
     color: var(--accent);
 }
 
@@ -137,7 +128,7 @@
 }
 
 .prioritySelect{
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .prioritySelectInput{
@@ -145,7 +136,7 @@
     border: none;
     color: inherit;
     font: inherit;
-    font-weight: bold;
+    font-weight: 600;
     padding: 0;
     cursor: pointer;
 }
@@ -157,27 +148,30 @@
 
 .priorityHigh{
     color: var(--priority-high-text);
-    background-color: rgba(231, 76, 60, 0.15);
 }
 .priorityMedium{
     color: var(--priority-medium-text);
-    background-color: rgba(243, 156, 18, 0.15);
 }
 .priorityLow{
     color: var(--priority-low-text);
-    background-color: rgba(46, 204, 113, 0.15);
 }
 
 .statusDoing{
     color: var(--accent);
-    background-color: rgba(59, 121, 246, 0.15);
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .actions{
     display: flex;
-    gap: 8px;
+    gap: 4px;
     flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.container:hover .actions,
+.container:focus-within .actions{
+    opacity: 1;
 }
 
 .iconButton{
